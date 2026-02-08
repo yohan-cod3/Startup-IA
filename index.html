@@ -6,14 +6,15 @@
     <title>Startup IA | Soluciones Inteligentes</title>
 <style>
     body {
-        background-color: #0a0a0b; /* Negro espacial */
-        color: #e0e0e0; /* Gris claro suave */
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #0a0a0b;
+        color: #e0e0e0;
+        font-family: 'Segoe UI', sans-serif;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        height: 100vh;
+        /* Cambia height: 100vh; por esto: */
+        min-height: 100vh; 
+        padding: 40px 20px; /* Añade espacio arriba y abajo */
         margin: 0;
         text-align: center;
     }
