@@ -103,6 +103,32 @@
                 </div>
             </div>
         </section>
+<section id="demo-nlp" style="margin-top: 60px; border-top: 1px solid #333; padding-top: 40px;">
+    <h2>Demo: Analizador de Sentimientos (NLP)</h2>
+    <p>Escribe un mensaje para que nuestra IA lo analice:</p>
+    <textarea id="userInput" placeholder="Ej: Me encanta el futuro de la tecnología..." style="width: 80%; max-width: 500px; height: 100px; border-radius: 10px; padding: 10px; background: #161618; color: white; border: 1px solid #00d2ff;"></textarea>
+    <br>
+    <button onclick="analizarTexto()">Analizar con IA</button>
+    <div id="resultadoIA" style="margin-top: 20px; font-weight: bold; color: #00d2ff;"></div>
+</section>
     </main>
+<script>
+    function analizarTexto() {
+        const texto = document.getElementById('userInput').value.toLowerCase();
+        const display = document.getElementById('resultadoIA');
+        
+        display.innerHTML = "Procesando tokens... 🧠";
+
+        setTimeout(() => {
+            if (texto.includes("bueno") || texto.includes("encanta") || texto.includes("excelente")) {
+                display.innerHTML = "Resultado IA: Sentimiento POSITIVO ✅";
+            } else if (texto.includes("malo") || texto.includes("horrible") || texto.includes("error")) {
+                display.innerHTML = "Resultado IA: Sentimiento NEGATIVO ❌";
+            } else {
+                display.innerHTML = "Resultado IA: Sentimiento NEUTRO ⚖️";
+            }
+        }, 800);
+    }
+</script>
 </body>
 </html>
