@@ -4,77 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startup IA | Soluciones Inteligentes</title>
-<style>
-    body {
-        background-color: #0a0a0b;
-        color: #e0e0e0;
-        font-family: 'Segoe UI', sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* Cambia height: 100vh; por esto: */
-        min-height: 100vh; 
-        padding: 40px 20px; /* Añade espacio arriba y abajo */
-        margin: 0;
-        text-align: center;
-    }
-    h1 {
-        color: #00d2ff; /* Azul neón IA */
-        font-size: 2.5rem;
-    }
-    button {
-        background: linear-gradient(45deg, #00d2ff, #3a7bd5);
-        border: none;
-        padding: 12px 24px;
-        color: white;
-        border-radius: 25px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-    button:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 15px #00d2ff;
-    }
-nav ul {
-        list-style: none; /* Quita los puntos blancos */
-        padding: 0;
-        display: flex;
-        gap: 20px; /* Separa Servicios de Contacto */
-        justify-content: center;
-    }
-    nav a {
-        color: #00d2ff;
-        text-decoration: none; /* Quita la línea de abajo */
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    nav a:hover {
-        color: #fff;
-        text-shadow: 0 0 10px #00d2ff;
-    }
-    section {
-        margin-top: 50px; /* Dale espacio al contenido principal */
-    }
-<section id="servicios">
-    <h2>Nuestra Tecnología Core</h2>
-    <div class="grid-servicios">
-        <div class="card">
-            <h3>NLP Avanzado</h3>
-            <p>Modelos de lenguaje especializados en análisis de sentimientos y automatización de reportes legales.</p>
-        </div>
-        <div class="card">
-            <h3>Visión Artificial</h3>
-            <p>Detección de anomalías en procesos industriales mediante redes neuronales convolucionales.</p>
-        </div>
-        <div class="card">
-            <h3>IA Predictiva</h3>
-            <p>Algoritmos de Machine Learning para la optimización de inventarios y logística en tiempo real.</p>
-        </div>
-    </div>
-</section>
-</style>
+    <style>
+        body {
+            background-color: #0a0a0b;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Esta es la corrección clave */
+            min-height: 100vh; 
+            padding: 60px 20px;
+            margin: 0;
+            text-align: center;
+        }
+        h1 {
+            color: #00d2ff;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        nav a {
+            color: #00d2ff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .grid-servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        .card {
+            background: #161618;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+        .card:hover {
+            border-color: #00d2ff;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        button {
+            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+            border: none;
+            padding: 12px 24px;
+            color: white;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -90,30 +82,27 @@ nav ul {
     <main>
         <section id="hero">
             <h2>Automatizamos el futuro de tu empresa</h2>
-            <p>Implementamos modelos de lenguaje y visión artificial para optimizar tus procesos.</p>
+            <p>Implementamos modelos de lenguaje y visión artificial.</p>
             <button>Solicitar Auditoría de IA</button>
         </section>
-<section id="servicios">
-    <h2>Nuestra Tecnología Core</h2>
-    <div class="grid-servicios">
-        <div class="card">
-            <h3>NLP Avanzado</h3>
-            <p>Modelos de lenguaje especializados en análisis de sentimientos y automatización de reportes legales.</p>
-        </div>
-        <div class="card">
-            <h3>Visión Artificial</h3>
-            <p>Detección de anomalías en procesos industriales mediante redes neuronales convolucionales.</p>
-        </div>
-        <div class="card">
-            <h3>IA Predictiva</h3>
-            <p>Algoritmos de Machine Learning para la optimización de inventarios y logística en tiempo real.</p>
-        </div>
-    </div>
-</section>
-    </main>
 
-    <footer>
-        <p>&copy; 2026 Startup IA - Todos los derechos reservados.</p>
-    </footer>
+        <section id="servicios">
+            <h2>Nuestra Tecnología Core</h2>
+            <div class="grid-servicios">
+                <div class="card">
+                    <h3>NLP Avanzado</h3>
+                    <p>Entendimiento de lenguaje humano para reportes automáticos.</p>
+                </div>
+                <div class="card">
+                    <h3>Visión Artificial</h3>
+                    <p>Detección de errores en producción mediante cámaras.</p>
+                </div>
+                <div class="card">
+                    <h3>IA Predictiva</h3>
+                    <p>Cálculo de tendencias para optimizar tus ventas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
