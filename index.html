@@ -66,6 +66,10 @@
             cursor: pointer;
             margin-top: 20px;
         }
+@keyframes escaneo {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
     </style>
 </head>
 <body>
@@ -111,10 +115,30 @@
     <button onclick="analizarTexto()">Analizar con IA</button>
     <div id="resultadoIA" style="margin-top: 20px; font-weight: bold; color: #00d2ff;"></div>
 </section>
+<section id="demo-vision" style="margin-top: 60px; border-top: 1px solid #333; padding-top: 40px;">
+    <h2>Demo: Escáner de Visión Artificial</h2>
+    <div id="camara-simulada" style="width: 300px; height: 200px; background: #000; margin: 20px auto; border: 2px solid #00d2ff; border-radius: 10px; position: relative; overflow: hidden;">
+        <div id="linea-escaneo" style="width: 100%; height: 2px; background: #00d2ff; position: absolute; top: 0; box-shadow: 0 0 10px #00d2ff; animation: escaneo 2s infinite linear;"></div>
+        <p id="status-vision" style="margin-top: 80px; color: #555;">[ CÁMARA INACTIVA ]</p>
+    </div>
+    <button onclick="activarVision()">Iniciar Escaneo de Seguridad</button>
+</section>
     </main>
 <script>
     function analizarTexto() {
-        const texto = document.getElementById('userInput').value.toLowerCase();
+function activarVision() {
+    const status = document.getElementById('status-vision');
+    status.innerHTML = "Analizando patrones...";
+    status.style.color = "#00d2ff";
+
+    setTimeout(() => {
+        const detecciones = ["Persona Identificada", "Acceso Autorizado", "Objeto Detectado: Drone", "Escaneo Completo"];
+        const resultado = detecciones[Math.floor(Math.random() * detecciones.length)];
+        status.innerHTML = `[ RESULTADO: ${resultado} ]`;
+        status.style.color = "#00ff00"; 
+    }, 2500);
+} 
+       const texto = document.getElementById('userInput').value.toLowerCase();
         const display = document.getElementById('resultadoIA');
         
         display.innerHTML = "Procesando tokens... 🧠";
