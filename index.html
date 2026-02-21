@@ -125,39 +125,46 @@
 </section>
     </main>
 <script>
-    function analizarTexto() {
-function activarVision() {
-    const status = document.getElementById('status-vision');
-    const caja = document.getElementById('camara-simulada'); // Nueva variable
-    
-    status.innerHTML = "ESCANEANDO ENTORNO...";
-    status.style.color = "#00d2ff";
-    caja.style.borderColor = "#ffcc00"; // Cambia a amarillo (alerta/proceso)
+        // Función de NLP (la de ayer)
+        function analizarTexto() {
+            const texto = document.getElementById('userInput').value.toLowerCase();
+            const display = document.getElementById('resultadoIA');
+            display.innerHTML = "Procesando tokens... 🧠";
+            setTimeout(() => {
+                if (texto.includes("bueno") || texto.includes("encanta")) {
+                    display.innerHTML = "Resultado IA: Sentimiento POSITIVO ✅";
+                } else if (texto.includes("malo") || texto.includes("error")) {
+                    display.innerHTML = "Resultado IA: Sentimiento NEGATIVO ❌";
+                } else {
+                    display.innerHTML = "Resultado IA: Sentimiento NEUTRO ⚖️";
+                }
+            }, 800);
+        }
 
-    setTimeout(() => {
-        const detecciones = ["Persona Identificada", "Acceso Autorizado", "Objeto Detectado: Drone", "Escaneo Completo"];
-        const resultado = detecciones[Math.floor(Math.random() * detecciones.length)];
-        
-        status.innerHTML = `[ RESULTADO: ${resultado} ]`;
-        status.style.color = "#00ff00"; 
-        caja.style.borderColor = "#00ff00"; // Cambia a verde (éxito)
-    }, 2500);
-} 
-       const texto = document.getElementById('userInput').value.toLowerCase();
-        const display = document.getElementById('resultadoIA');
-        
-        display.innerHTML = "Procesando tokens... 🧠";
-
-        setTimeout(() => {
-            if (texto.includes("bueno") || texto.includes("encanta") || texto.includes("excelente")) {
-                display.innerHTML = "Resultado IA: Sentimiento POSITIVO ✅";
-            } else if (texto.includes("malo") || texto.includes("horrible") || texto.includes("error")) {
-                display.innerHTML = "Resultado IA: Sentimiento NEGATIVO ❌";
-            } else {
-                display.innerHTML = "Resultado IA: Sentimiento NEUTRO ⚖️";
+        // Función de Visión (La que vamos a arreglar)
+        function activarVision() {
+            console.log("Botón presionado con éxito"); // Esto saldrá en la consola F12
+            const status = document.getElementById('status-vision');
+            const caja = document.getElementById('camara-simulada');
+            
+            if (!status || !caja) {
+                console.error("No se encontraron los elementos HTML");
+                return;
             }
-        }, 800);
-    }
-</script>
+
+            status.innerHTML = "ESCANEANDO ENTORNO...";
+            status.style.color = "#00d2ff";
+            caja.style.borderColor = "#ffcc00";
+
+            setTimeout(() => {
+                const detecciones = ["Persona Identificada", "Acceso Autorizado", "Objeto Detectado", "Escaneo Completo"];
+                const resultado = detecciones[Math.floor(Math.random() * detecciones.length)];
+                
+                status.innerHTML = `[ RESULTADO: ${resultado} ]`;
+                status.style.color = "#00ff00"; 
+                caja.style.borderColor = "#00ff00";
+            }, 2500);
+        }
+    </script> 
 </body>
 </html>
