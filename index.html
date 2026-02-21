@@ -128,14 +128,19 @@
     function analizarTexto() {
 function activarVision() {
     const status = document.getElementById('status-vision');
-    status.innerHTML = "Analizando patrones...";
+    const caja = document.getElementById('camara-simulada'); // Nueva variable
+    
+    status.innerHTML = "ESCANEANDO ENTORNO...";
     status.style.color = "#00d2ff";
+    caja.style.borderColor = "#ffcc00"; // Cambia a amarillo (alerta/proceso)
 
     setTimeout(() => {
         const detecciones = ["Persona Identificada", "Acceso Autorizado", "Objeto Detectado: Drone", "Escaneo Completo"];
         const resultado = detecciones[Math.floor(Math.random() * detecciones.length)];
+        
         status.innerHTML = `[ RESULTADO: ${resultado} ]`;
         status.style.color = "#00ff00"; 
+        caja.style.borderColor = "#00ff00"; // Cambia a verde (éxito)
     }, 2500);
 } 
        const texto = document.getElementById('userInput').value.toLowerCase();
