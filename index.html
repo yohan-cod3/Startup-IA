@@ -132,6 +132,22 @@
     <p id="texto-prediccion">Pulsa el botón para calcular el ROI proyectado.</p>
     <button onclick="calcularPrediccion()">Generar Pronóstico 2026</button>
 </section>
+<section id="contacto" style="margin-top: 60px; background: #161618; padding: 40px; border-radius: 20px; border: 1px dashed #00d2ff;">
+    <h2>¿Listo para dar el salto tecnológico?</h2>
+    <p>Solicita una consultoría gratuita con nuestro equipo de expertos.</p>
+    
+    <form id="contactForm" style="display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: 0 auto;">
+        <input type="text" placeholder="Nombre completo" required style="padding: 12px; border-radius: 8px; border: 1px solid #333; background: #0a0a0b; color: white;">
+        <input type="email" placeholder="Correo corporativo" required style="padding: 12px; border-radius: 8px; border: 1px solid #333; background: #0a0a0b; color: white;">
+        <select style="padding: 12px; border-radius: 8px; border: 1px solid #333; background: #0a0a0b; color: white;">
+            <option value="nlp">Interesado en NLP</option>
+            <option value="vision">Interesado en Visión Artificial</option>
+            <option value="predictiva">Interesado en IA Predictiva</option>
+        </select>
+        <button type="submit" style="background: #00d2ff; color: #000; transition: 0.3s;">Enviar Solicitud</button>
+    </form>
+    <p id="mensajeEnvio" style="margin-top: 15px; display: none; color: #00ff00;">✅ ¡Solicitud enviada! Nos contactaremos pronto.</p>
+</section>
     </main>
 <script>
         // Función de NLP (la de ayer)
@@ -187,6 +203,11 @@ function calcularPrediccion() {
         texto.innerHTML = `¡Predicción lista! Tu empresa podría crecer un **${crecimiento}%** este año con nuestra IA.`;
     }, 500);
 }
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita que la página se recargue
+    this.style.display = 'none'; // Esconde el formulario
+    document.getElementById('mensajeEnvio').style.display = 'block'; // Muestra el éxito
+});
     </script> 
 </body>
 </html>
